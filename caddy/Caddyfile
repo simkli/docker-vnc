@@ -1,0 +1,13 @@
+#localhost {
+#	root * /usr/share/novnc/
+#	#index {path}/vnc.html
+#	file_server
+#}
+
+localhost {
+	try_files {path}/vnc.html
+	root * /usr/share/novnc/
+	reverse_proxy /websockify* localhost:5900
+	file_server
+}
+
